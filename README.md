@@ -1,4 +1,4 @@
-# DNAQuery
+# DNAQuery - ES Language
 
 DNA Query is a tool to generate a high-level summary report containing key data from one or more CyberArk DNA scans conducted for a customer. In addition, it also tries to highlight areas of best practice which should be implemented as part of any project to improve privileged account security within an organisation.
 
