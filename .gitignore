@@ -19,8 +19,4 @@ working/windows/*.csv
 !working/windows/placeholder.csv
 Input/*
 Output/*
-dnaquery.db
-dnaquery.db
-dnaquery.db
-dnaquery.db
 *.db
