@@ -1,11 +1,10 @@
 <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="windowsdomainadmins" style="page-break-before: always">
         <div class="my-auto">
-          <h2 class="mb-5">Windows Domain Admins</h2>
+          <h2 class="mb-5">Administradores de Dominio Windows</h2>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <p>In almost all modern IT organizations, Active Directory plays a key role in managing overall the security of the Windows network.
-			  It is therefore a likely place for an attacker to focus, in the knowledge that AD typically contains many privileged accounts that can then be leveraged to attack infrastructure and gain access to information.</p>
-              <p>Securing Active Directory should be high on any security team’s priority list, and is the ideal starting point for any privileged access security project.</p>
+              <p>En casi todas las organizaciones actuales, Active Directory desempeña un papel clave en la administración general y la seguridad de la infraestructura TI. Por lo tanto, es un objetivo prioritario para cualquier atacante, sabiendo que AD normalmente contiene numerosas cuentas privilegiadas que aprovechar para atacar toda la infraestructura y obtener acceso a la información.</p>
+              <p>Asegurar Active Directory debe ser una prioridad en cualquier programa de seguridad, y es el punto de partida ideal para cualquier proyecto de seguridad de acceso privilegiado</p>
             </div>
           </div>
 
@@ -14,52 +13,39 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content">
-              <h3 class="mb-0">Domain Administrator Risk</h3>
-              <p>Domain Administrators are highly sought after accounts because they can be leveraged by attackers to access Domain Controllers
-			  which control user authentication and privilege throughout the corporate network. If an attacker has access to a domain controller,
-			  they can cause significant harm including the execution of a domain takeover attack – what is known as a “Golden Ticket” attack.</p>
+              <h3 class="mb-0">Administradores de Dominio - Riesgos</h3>
+              <p>Los administradores de dominio son cuentas criticas porque los atacantes pueden aprovecharlas para acceder a los controladores de dominio que gestionan la autenticación y los privilegios de los usuarios en toda la red corporativa. Si un atacante tiene acceso a un controlador de dominio, puede causar un daño irreparable, incluida la toma de control total del dominio, lo que se conoce como un ataque "Golden Ticket"</p>
 
-              <h4 class="subheading text-primary mb-3">Domain Administrator Hash Exposure</h4>
+              <h4 class="subheading text-primary mb-3">Exposicion de Hashes</h4>
 
               <div class="row mb-3">
                   <div class="col-md-8">
-					<p>The simplest way to obtain Domain Administrator credentials is to steal the cached credential hashes of these
-					users from machines where such a user has previously authenticated. To do so requires at least local administrator
-					privileges on the machine, which is why applying least privilege and isolating Domain Admin accounts from vulnerable
-					desktops is so important. Having stolen these credentials, an attacker can authenticate to any domain-joined machine,
-					including Domain Controllers, using the Pass-the-Hash technique and begin the process of initiating a takeover of the domain.</p></div>
+					<p>La forma más sencilla de obtener credenciales de administrador de dominio es robar los hashes de las credenciales almacenadas en la caché de estos usuarios, en las máquinas en las que dicho usuario se ha autenticado previamente. Para ello, se requieren al menos privilegios de administrador local en la máquina, por lo que es tan importante aplicar una politica de privilegios mínimos y evitar el uso de las cuentas de administrador de dominio fuera de los Controladores. Después de haber robado estas credenciales, un atacante puede autenticarse en cualquier máquina miembro del dominio, incluidos los Controladores de Dominio, utilizando la técnica Pass-the-Hash y iniciar un ataque para la toma de control total del dominio.</p></div>
                   <div class="col-md-4">
                       <div class="card bg-primary ml-3" style="width: 18rem;">
 						  <div class="card-header text-white card-title">
-							<b><insert>DomainAdminsCount</insert> Domain Admin Hashes Found</b>
+							<b><insert>DomainAdminsCount</insert> Hashes Encontrados</b>
 						  </div>
                           <div class="card-body">
-                              <p class="card-text text-white">Any one of these hashes could potentially be stolen and used to authenticate to a Domain Controller</p>
+                              <p class="card-text text-white">Cualquiera de estos hashes puede ser robado y utilizado para autenticar en un Controlador de Dominio</p>
                           </div>
                       </div>
                   </div>
               </div>
               <div class="row mr-5 ml-5 mt-3">
-                <h4 class="mb-0">Domain Administrator Hashes Found (Top 10 by Password Age)</h4>
+                <h4 class="mb-0"> Hashes encontrados (Top 10 por Antigudad de Contraseña)</h4>
                 <insert>DomainAdminsTable1</insert>
               </div>
 
-              <p>The best defense against theft of password hashes is to regularly rotate credentials by resetting the passwords.
-			  When an Active Directory user password is changed, any existing password hashes are immediately invalidated and cannot
-			  therefore be used to execute a Pass-the-Hash authentication on a target device. Rotating passwords regularly, or better still implementing
-			  'one-time’ passwords which are only valid for the duration of a user’s session, greatly reduces the window of opportunity for an attacker to find, steal and use such credentials.</p>
+              <p>La mejor defensa contra el robo de hashes de contraseñas es rotar las credenciales regularmente. Cuando se cambia una contraseña de usuario de Active Directory, cualquier hash de contraseña existente se invalida inmediatamente y, por lo tanto, no se puede utilizar para ejecutar una autenticación Pass-the-Hash en un dispositivo de destino. Rotar las contraseñas con regularidad o, mejor aún, implementar contraseñas de un solo uso que solo son válidas durante la sesión de un usuario, reduce considerablemente la ventana de oportunidad para que un atacante encuentre, robe y use dichas credenciales.</p>
 
         <p style="page-break-before: always"></p>
         <p>&nbsp;</p>
 
-              <h4 class="subheading text-primary mb-3">Machine Exposure</h4>
+              <h4 class="subheading text-primary mb-3">Exposicion de maquinas</h4>
               <div class="row mb-3">
                   <div class="col-md-8">
-                      <p>Due consideration should also be given to the number of machines where domain administrator hashes are exposed.
-					  The more desktops, workstations and servers where these hashes are located, the greater the chance that an attacker
-					  will be able to find and exploit them. Common locations to find administrator hashes are on jump servers and administrative desktop machines,
-					  which are common targets for attackers seeking access to environments. Particular care should be taken to prevent domain administrator hashes appearing on desktops,
-					  because these are typically the first machines to be accessed by an attacker during a breach.</p>
+                      <p>También debe prestarse la debida atención a la cantidad de máquinas a las que están expuestos los hash de administrador de dominio. En cuantos más escritorios, estaciones de trabajo y servidores estén ubicados estos hashes, mayor será la posibilidad de que un atacante pueda encontrarlos y explotarlos. Las ubicaciones comunes para encontrar hashes de administrador se encuentran en los servidores de salto y en las máquinas administrativas de escritorio, que son objetivos comunes para los atacantes que buscan acceso a entornos. Se debe tener especial cuidado para evitar que aparezcan hashes de administrador de dominio en los escritorios, ya que estas son las primeras máquinas a las que un atacante tendra acceso durante una intrusión.</p>
                     </div>
 
                  <div class="col-md-4">
