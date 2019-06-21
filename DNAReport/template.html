@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CyberArk DNA Executive Report - <insert>Customer Name</insert></title>
+    <title>CyberArk DNA - Reporte ejecutivo - <insert>Customer Name</insert></title>
 
     <!-- Custom Styles for this template -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,25 +47,25 @@
             <a class="nav-link js-scroll-trigger" href="#overview">Visión general</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#windowsdomainadmins">Domain Admins</a>
+            <a class="nav-link js-scroll-trigger" href="#windowsdomainadmins">Dominio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#WindowsLocal">Local Superusers</a>
+            <a class="nav-link js-scroll-trigger" href="#WindowsLocal">Local</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#endpoints">Endpoint Accounts</a>
+            <a class="nav-link js-scroll-trigger" href="#endpoints">Endpoints</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#applications">Application Accounts</a>
+            <a class="nav-link js-scroll-trigger" href="#applications">Applicaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#sshkeys">SSH Keys</a>
+            <a class="nav-link js-scroll-trigger" href="#sshkeys">Llaves SSH</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#clouddevops">Cloud & Devops</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#businessusers">Privileged Business Users</a>
+            <a class="nav-link js-scroll-trigger" href="#businessusers">Negocio</a>
           </li>
         </ul>
       </div>
@@ -76,7 +76,7 @@
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
           <img src="img/horizontal-logo_400_80px.png" class="mb-5" alt="">
-          <h1 class="mb-0">DNA Executive Report
+          <h1 class="mb-0">DNA - Reporte ejecutivo
           </h1>
           <div class="subheading mb-5">Preparado para <span class="title-primary"><insert>Customer Name</insert></span> por
             <a class="title-primary" href="mailto:<insert>Author Email</insert>"><insert>Author Email</insert></a>
@@ -109,9 +109,9 @@
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Dispositivos</h3>
+              <h3 class="mb-0">Infraestructura</h3>
               <div class="subheading text-primary mb-3"><span class="text-primary">Windows y Unix</span></div>
-              <p>CyberArk DNA tiene la capacidad de escanear varios tipos de dispositivos para determinar el número de cuentas, tanto privilegiadas como no privilegiadas, que existen dentro de ellas; así como información detallada sobre el estado de estas cuentas. A partir de los resultados de escaneo proporcionados, los siguientes tipos de máquinas fueron escaneados por DNA.</p>
+              <p>CyberArk DNA escanea distintos tipos de dispositivos para determinar el número de cuentas, tanto privilegiadas como no privilegiadas, que existen en de ellos, así como información detallada sobre el estado de estas cuentas. A partir de los resultados de escaneo proporcionados, los siguientes tipos de activos fueron escaneados por DNA.</p>
               <div class="resume-content mr-5 ml-5">
                 <insert>Windows and Unix Overview Table 1</insert>
               </div>
@@ -147,7 +147,7 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Nivel general de cumplimiento</h3>
               <div class="subheading text-primary mb-3"><span class="text-primary">Cuentas en cumplimiento</span></div>
-              <p>El nivel de cumplimiento general de la cuenta se puede medir en términos de la antigüedad de las contraseñas individuales en el entorno. En términos generales, cuanto más antigua es una contraseña, más probabilidades hay de que la roben, y mayor es la ventana de oportunidad para explotar esa credencial. Particularmente con las cuentas privilegiadas, es importante implementar una política de rotación que garantice que las contraseñas se cambien regularmente.</p>
+              <p>El nivel de cumplimiento de las cuentas se puede medir en términos de la antigüedad de las contraseñas. En términos generales, cuanto más antigua es una contraseña, más probabilidades hay de que la roben; y mayor es la ventana de oportunidad para explotar esa credencial. Particularmente con las cuentas privilegiadas, es importante implementar una política de rotación que garantice que las contraseñas se cambien regularmente.</p>
               <div class="resume-content mx-auto col-md-8">
                 <!-- <div class="overview-chart-4"></div> -->
                 <script type="text/javascript">
@@ -156,26 +156,26 @@
 
                   function drawChart() {
                     var data = google.visualization.arrayToDataTable([
-                      ['OS', 'Compliant', 'Non-compliant'],
+                      ['OS', 'Cumple', 'No cumple'],
                       ['Windows', <insert>WindowsCompliant</insert>,<insert>WindowsNonCompliant</insert>],
                       ['Unix', <insert>UnixCompliant</insert>,<insert>UnixNonCompliant</insert>]
                     ]);
 
                     var options = {
 
-                        title: 'Operating System Password Compliance',
+                        title: 'Nivel de cumplimiento de contraseñas en OS',
                         titleTextStyle: {fontName: 'Ropa Sans', fontSize: '18' },
                         legend: {textStyle: {
                                             fontName: 'Ropa Sans',
                                             fontSize: '12'
                                             }
                                 },
-                        hAxis: {title: 'OS Type',
+                        hAxis: {title: 'Tipo OS',
                                 textStyle:{
                                   fontName: 'Ropa Sans'
                                 }
                               },
-                        vAxis: {title: 'Accounts',
+                        vAxis: {title: 'Cuentas',
                                 textStyle:{
                                   fontName: 'Ropa Sans'
                                 }
