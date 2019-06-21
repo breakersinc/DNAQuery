@@ -3,10 +3,10 @@
 
 <div class="resume-item d-flex flex-column flex-md-row mb-5">
   <div class="resume-content mr-auto">
-    <h3 class="mb-0">Windows Devices</h3>
-    <h4 class="subheading text-primary mb-3">Windows Server Operating System versions</h4>
-    <p>As the Windows Operating System has evolved over the years, new security features have been added that have decreased the vulnerability of the platform. However due to a variety of factors organizations rarely update their entire environment to the latest available version in a timely manner. It is important to understand the security limitations of older versions of Windows, particularly where those versions are no longer supported by Microsoft themselves, such as Server 2000 or 2003. On these platforms there are far fewer security features, and the risk of credential theft from these devices is much higher than from more modern Windows 2012 or 2016 servers.</p>
-    <p>CyberArk DNA can detect the versions of Windows in use within the environment. The following table outlines the various different versions of Windows Server that were detected in the <insert>Customer Name</insert> environment.</p>
+    <h3 class="mb-0">Infraestructura Windows</h3>
+    <h4 class="subheading text-primary mb-3">Versiones de Windows Server</h4>
+    <p>A medida que Windows ha evolucionado a lo largo de los años, se han agregado nuevas características de seguridad que han reducido las vulnerabilidades. Sin embargo, las organizaciones rara vez actualizan su entorno completo a la última versión disponible de manera oportuna. Es importante comprender las limitaciones de seguridad de las versiones desactualizadas de Windows, en particular cuando esas versiones ya no son soportadas por Microsoft, como Server 2000 o 2003. En estas versiones, hay muchas menos funciones de seguridad y el riesgo de robo de credenciales en estos dispositivos es mucho más alto que los servidores Windows 2012 o 2016 más modernos.</p>
+    <p>CyberArk DNA detecta las versiones de Windows escaneadas. La siguiente tabla muestra las versiones de Windows Server que se detectaron en el entorno de <insert>Customer Name</insert>.</p>
       <div class="resume-content mr-auto ml-auto col-md-8">
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['corechart']});
@@ -15,13 +15,13 @@
                 function drawChart() {
 
                   var data = google.visualization.arrayToDataTable([
-                    ['OS Version', 'Number of Machines'],
+                    ['OS Version', 'Numero de maquinas'],
                     <insert>WindowsDevicesList</insert>
                   ]);
 
                   var options = {
 
-                      title: 'Windows Server Versions',
+                      title: 'Versiones de Windows Server',
                       titleTextStyle: {fontName: 'Ropa Sans', fontSize: '18' },
                       legend: {textStyle: {
                                           fontName: 'Ropa Sans',
@@ -47,36 +47,36 @@
 
 <div class="resume-item d-flex flex-column flex-md-row">
   <div class="resume-content mr-auto">
-    <h3 class="mb-0">Windows Local Administrator accounts</h3>
-    <h4 class="subheading text-primary mb-3">Built-In Administrator Accounts</h4>
+    <h3 class="mb-0">Administradores Locales Windows</h3>
+    <h4 class="subheading text-primary mb-3">Cuentas Administradoras Built-In</h4>
     <div class="row mb-3">
       <div class="col-md-8">
-          <p>In Windows environments local Administrator accounts across both desktops and servers are often neglected. With Active Directory offering unified authentication capability across the organization, most IT Admins rely on their domain credentials to authenticate to devices. Local Admin accounts can therefore go unused for long periods of time, with the passwords remaining fixed for months or years.</p>
-          <p>In some cases organizations also use the same local administrator password across most or even all of their Windows machines. This is sometimes done for simplicity’s sake, and sometimes due to the way that Windows machines are deployed using a template image. In either case it makes an attacker’s job much simpler – all they have to do is compromise one credential to get access to the majority of the Windows estate. Some organizations will rename the account in an attempt to provide some security, but this is of doubtful utility because the "SID 500" account is easily identifiable regardless of its username. Effective management of these passwords is therefore a critical part of any privilege project.</p>
+          <p>En los entornos de Windows, las cuentas de administrador local en escritorios y servidores a menudo se descuidan. Con Active Directory que ofrece una capacidad de autenticación unificada en toda la organización, y la mayoría de los administradores TI confían en sus cuentas de dominio para autenticarse en toda la infraestructura. Por lo tanto, las cuentas de administrador local pueden permanecer sin uso durante largos períodos de tiempo, y las contraseñas permanecen fijas durante meses o años.</p>
+          <p>En algunos casos, las organizaciones también usan la misma contraseña de administrador local en la mayoría o incluso en todas sus máquinas con Windows. Esto se hace a veces por razones de simplicidad y, a veces, debido a la forma en que se generan las máquinas usando una imagen de plantilla. En cualquier caso, hace que el trabajo de un atacante sea mucho más sencillo: todo lo que tienen que hacer es comprometer una credencial para obtener acceso a la mayoría de la infraestructura Windows. Algunas organizaciones cambiarán el nombre de la cuenta en un intento de proporcionar cierta seguridad, pero esto es de dudosa utilidad ya la cuenta "SID 500" es fácilmente identificable independientemente de su nombre de usuario. La administración efectiva de estas contraseñas es, por lo tanto, una parte crítica de cualquier proyecto de seguridad de cuentas privilegiadas.</p>
       </div>
       <div class="col-md-4">
           <div class="card bg-primary ml-3" style="width: 18rem;">
 			  <div class="card-header text-white card-title">
-				<b><insert>OldestLocalAdminPassword</insert> days: the maximum Local Admin password age discovered</b>
+				<b><insert>OldestLocalAdminPassword</insert> dias: antiguedad máxima de contraseña descubierta en cuentas Administradoras Locales</b>
 			  </div>
               <div class="card-body">
-                  <p class="card-text text-white">Very old local admin passwords are indicative of a lack of password management within the environment</p>
+                  <p class="card-text text-white">Las contraseñas de administrador local muy antiguas son indicativas de una falta de politicas o gestion inadecuada de privilegios en la compañia.</p>
               </div>
           </div>
           <p>&nbsp;</p>
           <div class="card bg-primary ml-3" style="width: 18rem;">
 			  <div class="card-header text-white card-title">
-				<b><insert>AverageLocalAdminPassword</insert> days: the mean average Local Admin password age</b>
+				<b><insert>AverageLocalAdminPassword</insert> dias: antiguedad media de contraseña descubierta en cuentas Administradoras Locales</b>
 			  </div>
               <div class="card-body">
-                  <p class="card-text text-white">A high average password age is indicative of a lack of password management within the environment</p>
+                  <p class="card-text text-white">Un promedio alto de antigüedad de las contraseñas es indicativo de una falta de politicas o gestion inadecuada de privilegios en la compañia.</p>
               </div>
           </div>
       </div>
   </div>
 	<div class="row mb-3">
 		<div class="row mr-5 ml-5 mt-3">
-		  <h4 class="mb-0 mt-3">Oldest Local Admin Accounts (Top 10 by Password Age)</h4>
+		  <h4 class="mb-0 mt-3">Cuentas Administradoras locales mas antiguas (Top 10 por antiguedad)</h4>
 		  <insert>OldestLocalAdminAccounts</insert>
 		</div>
   </div>
@@ -86,18 +86,18 @@
 
   <div class="row mb-3">
 		<div class="col-md-8">
-			<h4 class="subheading text-primary mb-3">Users With Local Admin Rights on Servers</h4>
-			<p>In most organizations with Active Directory, domain or server administrator accounts are most commonly used for server administration. It is also possible to assign administrative rights to domain accounts directly on servers by adding them to the local Administrator group.</p>
-			<p>When administrative privileges are assigned in this manner, centralized management and monitoring becomes extremely difficult. It is much more difficult to revoke administrative rights, such as when a user changes roles or leaves a business entirely.</p>
-			<p>What’s worse is that these users, if compromised, could allow an attacker to escalate privilege. Local administrator accounts can be used to extract credentials and credential hashes for other accounts that have used the same server, such as a domain administrator account or a highly-privileged service account. Attackers can install keystroke loggers to look for any typed passwords or run tools like Mimikatz to obtain privileged account hashes.</p>
+			<h4 class="subheading text-primary mb-3">Cuentas con privilegios de Administración local en Servidores</h4>
+			<p>En la mayoría de las organizaciones con Active Directory, las cuentas de administrador de dominio se usan comúnmente para la administración de servidores. También es posible asignar privilegios administrativos a cuentas de dominio directamente en servidores, agregándolos al grupo de administradores locales.</p>
+			<p>Cuando los privilegios administrativos se asignan de esta manera, la administración y el monitoreo centralizados se vuelven extremadamente difíciles. Es mucho más difícil revocar los derechos administrativos, como cuando un usuario cambia de rol o deja la compañia.</p>
+			<p>Lo que es peor, es que estas cuentas, si son comprometidas, podrían permitir que un atacante escalar privilegios. Las cuentas de administrador local se pueden usar para extraer credenciales y hashes de otras cuentas que se hayan usado el mismo servidor, como una cuenta de administrador de dominio o una cuenta de servicio altamente privilegiada. Los atacantes suelen instalar keyloggers para buscar contraseñas escritas o ejecutar herramientas como Mimikatz para obtener hashes de cuentas privilegiadas.</p>
 		</div>
 		<div class="col-md-4">
 			<div class="card bg-primary ml-3" style="width: 18rem;">
 				<div class="card-header text-white card-title">
-					<b><insert>UsersWithLocalAdmin</insert> Domain users have local admin rights granted directly on servers (not via Domain groups)</b>
+					<b><insert>UsersWithLocalAdmin</insert> Usuarios de Dominio tienen privilegios Administrativos locales directos (no asignados a traves de grupos de dominio)</b>
 				</div>
 				<div class="card-body">
-					<p class="card-text text-white">The privileges of these users are difficult to manage, as they are set directly on the device in question and not centrally via Active Directory</p>
+					<p class="card-text text-white">Los privilegios de estos usuarios son difíciles de gestionar, ya que se configuran directamente en el dispositivo en cuestión y no de manera centralizada a través de Active Directory.</p>
 				</div>
 			</div>
 		</div>
