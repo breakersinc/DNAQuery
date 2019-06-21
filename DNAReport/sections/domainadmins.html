@@ -63,23 +63,21 @@
               </div>
 
               <div class="row mr-5 ml-5 mt-3">
-                  <h4 class="mb-0">Domain Administrator Machine Exposure</h4>
+                  <h4 class="mb-0">Exposocion de maquinas Administradoras de dominio</h4>
                   <insert>DomainAdminsTable2</insert>
                 </div>
 
-              <p>Another technique to reduce the potential of hashes being obtained is to reduce the number of machines where these hashes are created.
-			  It is highly recommended within Windows environments to implement a 'jump server' or 'bastion host' architecture which prevents direct access
-			  from a desktop environment into the server layer. When all administrative users authenticate on such a jump server, that single point of entry becomes much easier to secure and monitor.</p>
+              <p>Otra técnica para reducir el potencial de los hashes que se obtienen es reducir la cantidad de máquinas donde se crean estos hashes. Es altamente recomendable en entornos Windows implementar una arquitectura de 'servidor de salto' o 'host de bastión' que impida el acceso directo desde la red de usuarios a la red de servidores. Cuando todos los usuarios administrativos se autentican en dicho servidor de salto, ese único punto de entrada se vuelve mucho más fácil de proteger y monitorear.</p>
 
-              <h4 class="subheading text-primary mb-3">Reducing Credential Theft Risk</h4>
-              <p>A technique that can be used to defend against password hash theft is to harden the operating system itself. There are two main ways to achieve this:</p>
+              <p>&nbsp;</p>
+              <h4 class="subheading text-primary mb-3">Reduciendo el riesgo de robo de credenciales</h4>
+              <p>Una técnica que puede usarse como defensa contra el robo de hashes de contraseñas, es fortalecer el sistema operativo. Hay dos formas principales de lograr esto:</p>
               <ul>
-                <li>Remove local administrator rights from users. Only administrators can retrieve password hashes, therefore reducing the number of users who have local administrator
-				rights on desktops is a simple method for reducing the chance of password hash theft.</li>
-                <li>Implement software to protect the key Windows subsystems that control user authentication: the Security Accounts Manager (SAM) database and the Local Security Authority Subsystem Service (LSASS)</li>
-                <li>Implement software whitelisting to prevent the execution of malware which could be used to steal credentials</li>
+                <li>Eliminar los privilegios de administrador local de los usuarios. Solo los administradores pueden recuperar los hashes de cuentas, por lo que reducir el número de usuarios que tienen privilegios de administrador local en los endpoints es un método simple para reducir la posibilidad de robo de hashes.</li>
+                <li>Implementar software para proteger los subsistemas clave de Windows que controlan la autenticación del usuario: la base de datos del Administrador de cuentas de seguridad (SAM) y el Servicio de Subsistema de autoridad de seguridad local (LSASS)</li>
+                <li>Implementar listas grises de software para evitar la ejecución de malware que podría usarse para robar credenciales.</li>
               </ul>
-              <p>A way to achieve these goals is to use an endpoint least-privilege tool such as CyberArk Endpoint Privileges Manager.</p>
+              <p>Una forma de cumplir estos objetivos es utilizar una herramienta de gestion de privilegios en edpoints como CyberArk Endpoint Privileges Manager (EPM).</p>
 
             </div>
           </div>
@@ -89,39 +87,35 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Domain Administrator Exposure</h3>
+              <h3 class="mb-0">Exposicion de Administradores de dominio</h3>
               <div class="row mb-3">
                   <div class="col-md-8">
-                      <p>A simple metric to gauge the potential risk that an organization faces is the number of the most highly-privileged accounts that exist in the environment – Domain Administrators.
-					  Ideally, the only members of Domain Admins should be accounts that are required to manage the domain itself – any other role, such as server administration, should be conducted using a lesser-privileged account.</p>
+                      <p>Una métrica simple del riesgo potencial que enfrenta una organización, es el número de cuentas con los privilegios más elevados que existen en el entorno: Administradores de dominio. Idealmente, los únicos miembros de dicho grupo deberían ser las cuentas que se requieren para administrar el dominio en sí; cualquier otra función, como la administración de servidores, debe realizarse utilizando una cuenta con menos privilegios.</p>
                   </div>
                   <div class="col-md-4">
                       <div class="card bg-primary ml-3" style="width: 18rem;">
 						  <div class="card-header text-white card-title">
-							<b><insert>DomainAdminsTotalCount</insert> unique Domain Admin accounts found</b>
+							<b><insert>DomainAdminsTotalCount</insert> cuentas unicas Administradoras de Dominio encontradas</b>
 						  </div>
                           <div class="card-body">
-                              <p class="card-text text-white">Compromise of any of these accounts could lead to irreversible takeover of the domain by an attacker</p>
+                              <p class="card-text text-white">El compromiso de cualquiera de estas cuentas podría llevar a una toma de control total e irreversible del dominio por parte de un atacante</p>
                           </div>
                       </div>
                   </div>
 
               <div class="row mr-5 ml-5 mt-3">
-                  <h4 class="mb-0">Domain Administrator Accounts (Top 10 by Password Age)</h4>
+                  <h4 class="mb-0">Cuentas Administradoras de dominio (Top 10 by Antiguedad de contraseña)</h4>
                   <insert>DomainAdminsTable3</insert>
                 </div>
 
-              <h4 class="subheading text-primary mb-3">Personal vs. Generic Accounts</h4>
-              <p>CyberArk in particular recommends moving away from the personal Domain Admin account model, where each administrator has their own “ADM” account or similar,
-			  to a shared generic account model with only enough domain admin accounts available for the anticipated number of simultaneous connections to DCs. Access to these accounts
-			  should be controlled by a Privileged Access Management (PAM) solution, which secures access to such credentials and fully audits who has access to them. </p>
-              <p>This has several advantages:</p>
+              <h4 class="subheading text-primary mb-3">Cuenta personales vs. Genericas</h4>
+              <p>CyberArk, en particular, recomienda alejarse del modelo de cuenta de administrador de dominio personal donde cada administrador tiene su propia cuenta "ADM" o similar, y adoptar un modelo de cuenta genérica compartido, con suficientes cuentas de administrador de dominio disponibles para el número de conexiones simultáneas a los controladores. El acceso a estas cuentas debe ser controlado por una solución de administración de acceso privilegiado (PAM), que asegura la gestion del proceso y audita completamente quién tiene acceso a ellas.</p>
               <ul>
-                <li>Identity management process become simpler. No longer do organizations have to have processes in place to disable personal Domain Admin accounts when the user leaves.</li>
-                <li>The attack surface is reduced. The fewer Domain Admin accounts exist, the less chance there is that their credentials will be stolen or misused.</li>
-                <li>Domain Admin passwords are more easily be hidden from administrative users and rotated automatically, reducing the potential Pass-the-Hash risk across the organization.</li>
+                <li>El proceso de gestión de la identidad se vuelve más sencillo. Ya no es necesario que las organizaciones tengan procesos implementados para deshabilitar las cuentas personales de Administracion.</li>
+                <li>La superficie de ataque se reduce. Cuantas menos cuentas de administrador de dominio existan, menor será la posibilidad de que sus credenciales sean robadas o mal utilizadas.</li>
+                <li>Las contraseñas de las cuentas administrador de dominio se ocultan a los usuarios administrativos y se rotan automáticamente, lo que reduce el riesgo potencial de Pass-the-Hash en toda la organización.</li>
               </ul>
-              <p>Audit trails can be maintained by the PAM solution so that activities can always be traced back to the actual user conducting them.</p>
+              <p>La solución PAM puede mantener las pistas de auditoría para que las actividades siempre puedan rastrearse hasta el usuario real que las realiza.</p>
             </div>
           </div>
 
