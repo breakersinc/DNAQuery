@@ -16,6 +16,7 @@
               <h3 class="mb-0">Administradores de Dominio - Riesgos</h3>
               <p>Los administradores de dominio son cuentas criticas porque los atacantes pueden aprovecharlas para acceder a los controladores de dominio que gestionan la autenticación y los privilegios de los usuarios en toda la red corporativa. Si un atacante tiene acceso a un controlador de dominio, puede causar un daño irreparable, incluida la toma de control total del dominio, lo que se conoce como un ataque "Golden Ticket"</p>
 
+              <p>&nbsp;</p>
               <h4 class="subheading text-primary mb-3">Exposicion de Hashes</h4>
 
               <div class="row mb-3">
@@ -33,7 +34,7 @@
                   </div>
               </div>
               <div class="row mr-5 ml-5 mt-3">
-                <h4 class="mb-0"> Hashes encontrados (Top 10 por Antigudad de Contraseña)</h4>
+                <h4 class="mb-0">Hashes encontrados (Top 10 por Antigudad de Contraseña)</h4>
                 <insert>DomainAdminsTable1</insert>
               </div>
 
@@ -51,7 +52,7 @@
                  <div class="col-md-4">
                     <div class="card bg-primary ml-3" style="width: 18rem;">
 						<div class="card-header text-white card-title">
-							<b><insert>DomainAdminsMachineCount</insert> Machines with Domain Admin Hashes</b>
+							<b><insert>DomainAdminsMachineCount</insert> Maquinas con Hashes de Administradores de Dominio</b>
 						</div>
                         <div class="card-body">
                             <p class="card-text text-white">Compromise of any of these machines could lead to the theft of Domain Administrator password hashes</p>
