@@ -20,3 +20,4 @@ working/windows/*.csv
 Input/*
 Output/*
 *.db
+working/sshkeys/sshkeys.csv
