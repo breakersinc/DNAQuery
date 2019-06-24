@@ -40,19 +40,19 @@
         <div id="database-versions" style="width: 800px; height: 500px;"></div>
       </div>
 
-      <h4 class="subheading text-primary mb-3">SQL Server Accounts</h4>
-      <p>Microsoft SQL Servers support two types of authentication: SQL Server authentication, and Windows Integrated authentication. SQL Server authentication is considered to be much less secure than Windows Integrated authentication, because as part of the process for authenticating remote users the username and an encrypted copy of the password of the user are passed across the network, where they could potentially be captured in transit. In fact, client applications, if badly configured, may even transmit a plain-text password across the network during authentication. It is therefore advisable not to use SQL Server authentication for any applications, but to instead use Windows Integrated authentication which relies on the much more secure Kerberos protocol for authentication. In fact, current best practice suggests only using SQL logins for legacy applications.</p>
+      <h4 class="subheading text-primary mb-3">Cuentas en SQL Server</h4>
+      <p>Los servidores Microsoft SQL soportan dos tipos de autenticación: la autenticación local de SQL Server y la autenticación integrada de Windows. La autenticación de SQL Server se considera mucho menos segura que la autenticación integrada de Windows, ya que como parte del proceso, el nombre de usuario y una copia cifrada de la contraseña del usuario se pasan a través de la red, donde podrían ser capturados en tránsito. De hecho, las aplicaciones cliente, si están mal configuradas, pueden transmitir una contraseña sin cifrar a través de la red durante la autenticación. Por lo tanto, es recomendable no usar la autenticación de SQL Server para ninguna aplicación, sino usar la autenticación integrada de Windows que se basa en el protocolo Kerberos, mucho más seguro. De hecho, las mejores prácticas actuales sugieren el uso exclusivo de inicios de sesión SQL para aplicaciones heredadas.</p>
 
       <div class="row mr-5 ml-5 mt-3">
-        <h4 class="mb-0 mt-3">Database SQL Login Accounts</h4>
+        <h4 class="mb-0 mt-3">Cuentas de autenticacion SQL Server</h4>
         <insert>SQL Server users table</insert>
       </div>
 
       <p style="page-break-before: always"></p>
       <p>&nbsp;</p>
 
-      <h4 class="subheading text-primary mb-3">Windows Local Accounts with SQL Rights</h4>
-      <p>It is possible to configure SQL Servers to allow Windows local accounts to access database instances. However, this is generally considered to be bad practice because such users can be more difficult to manage. It is particularly bad security practice to grant Local Administrator rights to any accounts used by SQL, because such privileges are not required by the database service - least privilege should be applied in this case to prevent a successful attack on the SQL Service turning into a full compromise of the host operating system. As of SQL Server 2008, the BUILTIN\Administrators group is no longer granted the sysadmin role by default, a reflection of the growing understanding of the role that least-privilege plays.</p>
+      <h4 class="subheading text-primary mb-3">Cuentas locales windows con privilegios SQL</h4>
+      <p>Es posible configurar SQL Server para permitir que las cuentas locales de Windows accedan a instancias de base de datos. Sin embargo, esto generalmente se considera una mala práctica, ya que dichos usuarios suelen ser más difíciles de administrar. Es una mala práctica de seguridad otorgar derechos de administrador local a cualquier cuenta utilizada por SQL, ya que el servicio de base de datos no requiere tales privilegios; en este caso, se debe aplicar el privilegio mínimo para evitar que un ataque exitoso al servicio SQL se convierta en un completo Compromiso del sistema operativo host. A partir de SQL Server 2008, al grupo BUILTIN \ Administrators ya no se le otorga la función de administrador del sistema de forma predeterminada, lo que refleja la creciente comprensión de la función que desempeña el privilegio mínimo.</p>
       <div class="row mr-5 ml-5 mt-3">
         <h4 class="mb-0 mt-3">Windows Local Accounts with SQL Access</h4>
         <insert>Windows Local SQL users table</insert>
