@@ -5,7 +5,7 @@
     <div class="resume-content mr-auto">
       <h3 class="mb-0">Cuentas Microsoft SQL Server</h3>
 
-      <h4 class="subheading text-primary mb-3">Chart of MS SQL Servers</h4>
+      <h4 class="subheading text-primary mb-3">Versiones de SQL Server</h4>
       <p>Microsoft SQL Server es una de los principales motores de base de datos y de mayor uso la industria. Cuando se implementan nuevas aplicaciones dentro de una organización, no es raro ver múltiples versiones de SQL Server para proporcionar servicios de base de datos de soporte. Tampoco es infrecuente ver que estos servidores de bases de datos no se gestionan, y que las aplicaciones se dejan en su lugar durante períodos prolongados, lo que puede dar lugar a versiones descontinuadas de SQL con pocas medidas de seguridad en el entorno. Comprender qué versiones están presentes permite que cada una se administre en consecuencia. La siguiente tabla muestra las versiones de SQL encontradas durante la ejecucion de DNA.</p>
       <div class="resume-content mr-auto ml-auto col-md-8">
         <script type="text/javascript">
@@ -54,14 +54,15 @@
       <h4 class="subheading text-primary mb-3">Cuentas locales windows con privilegios SQL</h4>
       <p>Es posible configurar SQL Server para permitir que las cuentas locales de Windows accedan a instancias de base de datos. Sin embargo, esto generalmente se considera una mala práctica, ya que dichos usuarios suelen ser más difíciles de administrar. Es una mala práctica de seguridad otorgar derechos de administrador local a cualquier cuenta utilizada por SQL, ya que el servicio de base de datos no requiere tales privilegios; en este caso, se debe aplicar el privilegio mínimo para evitar que un ataque exitoso al servicio SQL se convierta en un completo Compromiso del sistema operativo host. A partir de SQL Server 2008, al grupo BUILTIN \ Administrators ya no se le otorga la función de administrador del sistema de forma predeterminada, lo que refleja la creciente comprensión de la función que desempeña el privilegio mínimo.</p>
       <div class="row mr-5 ml-5 mt-3">
-        <h4 class="mb-0 mt-3">Windows Local Accounts with SQL Access</h4>
+        <h4 class="mb-0 mt-3">Cuentas locales windows con privilegios SQL</h4>
         <insert>Windows Local SQL users table</insert>
       </div>
 
-      <h4 class="subheading text-primary mb-3">Windows Domain Accounts with SQL Rights</h4>
-      <p>Wherever possible Windows Domain Accounts should be used for SQL Server administration and application access. This has the advantage of relying on the robust Kerberos authentication protocol, but also it allows for centralized management of these accounts within Active Directory. However as with local accounts care should be taken not to “over-privilege” domain accounts – for example, domain accounts to be used by databases should not have Domain Administrator privileges, but should instead only be granted SQL access via a dedicated, role-specific AD group.</p>
+      <h4 class="subheading text-primary mb-3">Cuentas de dominio con privilegios SQL</h4>
+      <p>Siempre que sea posible, deben utilizars cuentas de dominio de Windows para la administración de SQL Server y el acceso a las aplicaciones. Esto tiene la ventaja de confiar en el robusto protocolo de autenticación Kerberos, pero también permite la administración centralizada de estas cuentas dentro de Active Directory. Sin embargo, al igual que con las cuentas locales, se debe tener cuidado de no "privilegiar en exceso"; por ejemplo, las cuentas de dominio que deben usar las bases de datos, no deben tener privilegios de administrador de dominio, sino que solo se les debe otorgar acceso a SQL a través de una función específica y grupo AD específico.
+</p>
       <div class="row mr-5 ml-5 mt-3">
-          <h4 class="mb-0 mt-3">Windows Domain Accounts with SQL Access</h4>
+          <h4 class="mb-0 mt-3">Cuentas de dominio Windows con acceso a SQL Server</h4>
           <insert>Windows Domain SQL users table</insert>
       </div>
 
