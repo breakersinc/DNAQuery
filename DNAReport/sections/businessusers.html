@@ -17,22 +17,22 @@
 
                 <div class="row">
                     <div class="col-md-8">
-                        <p>As most Windows Servers are joined to an Active Directory domain, and user permissions are managed using AD groups rather than directly on their account, it is not uncommon to see these groups used to control access via RDP and other remote access protocols. If these groups are used to allow remote access to servers, care must be taken that least-privilege principles are still applied – indiscriminately allowing group access might result in inadvertently giving access to an unauthorized user. When such access is legitimate, care should be taken to use the correct groups – relying on blanket groups such as ‘Domain Users’ can easily lead to over-provisioning of access rights.</p>
+                        <p> Como la mayoría de los servidores de Windows estan enrolados a Active Directory, y los permisos de los usuarios se administran mediante grupos de AD en lugar de hacerlo directamente en su cuenta, no es raro que estos grupos se utilicen para controlar el acceso a través de RDP y otros protocolos de acceso remoto. Si estos grupos se utilizan para permitir el acceso remoto a los servidores, se debe tener cuidado de aplicar los principios de privilegios mínimos, ya que permitir indiscriminadamente el acceso de grupos puede dar acceso inadvertidamente a un acceso no autorizado. Cuando dicho acceso es legítimo, se debe tener cuidado de usar los grupos correctos, ya que confiar en grupos generales como los "Usuarios del dominio" puede llevar fácilmente a un aprovisionamiento excesivo de privilegios de acceso. </p>
                     </div>
                     <div class="col-md-4">
                         <div class="card bg-primary ml-3" style="width: 18rem;">
 							<div class="card-header text-white card-title">
-								<b><insert>Non-privileged Users with access to servers</insert> non-privileged users have access to Windows servers</b>
+								<b><insert>Non-privileged Users with access to servers</insert> usuarios no privilegiados con acceso a Servidores</b>
 							</div>
                             <div class="card-body">
-                                <p class="card-text text-white">Non-privileged user accounts, if compromised, could be used to perform reconnaissance on servers and allow attackers to discover potential targets.</p>
+                                <p class="card-text text-white">Las cuentas de usuario sin privilegios, si están comprometidas, podrían usarse para realizar reconocimiento en servidores y permitir a los atacantes descubrir posibles objetivos.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row mr-5 ml-5 mt-3">
-                    <h4 class="mb-0 mt-3">Non-Privileged Users with Windows Server access (Top 10 by Password Age)</h4>
+                    <h4 class="mb-0 mt-3">Usuarios no privilegiados con acceso a servidores (Top 10 por antiguedad de contraseña)</h4>
                     <insert>Business Users table</insert>
                 </div>
 
