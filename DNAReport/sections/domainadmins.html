@@ -40,10 +40,9 @@
 
               <p>La mejor defensa contra el robo de hashes de contraseñas es rotar las credenciales regularmente. Cuando se cambia una contraseña de usuario de Active Directory, cualquier hash de contraseña existente se invalida inmediatamente y, por lo tanto, no se puede utilizar para ejecutar una autenticación Pass-the-Hash en un dispositivo de destino. Rotar las contraseñas con regularidad o, mejor aún, implementar contraseñas de un solo uso que solo son válidas durante la sesión de un usuario, reduce considerablemente la ventana de oportunidad para que un atacante encuentre, robe y use dichas credenciales.</p>
 
-        <p style="page-break-before: always"></p>
-        <p>&nbsp;</p>
-
+              <p>&nbsp;</p>
               <h4 class="subheading text-primary mb-3">Exposicion de maquinas</h4>
+
               <div class="row mb-3">
                   <div class="col-md-8">
                       <p>También debe prestarse la debida atención a la cantidad de máquinas a las que están expuestos los hash de administrador de dominio. En cuantos más escritorios, estaciones de trabajo y servidores estén ubicados estos hashes, mayor será la posibilidad de que un atacante pueda encontrarlos y explotarlos. Las ubicaciones comunes para encontrar hashes de administrador se encuentran en los servidores de salto y en las máquinas administrativas de escritorio, que son objetivos comunes para los atacantes que buscan acceso a entornos. Se debe tener especial cuidado para evitar que aparezcan hashes de administrador de dominio en los escritorios, ya que estas son las primeras máquinas a las que un atacante tendra acceso durante una intrusión.</p>
