@@ -3,29 +3,29 @@
 
       <div class="resume-item d-flex flex-column flex-md-row mb-5">
         <div class="resume-content mr-auto">
-          <h3 class="mb-0">Domain Service Accounts</h3>
-          <h4 class="subheading text-primary mb-3">Domain Service Principal Names</h4>
+          <h3 class="mb-0">Cuentas de Servicio de Dominio</h3>
+          <h4 class="subheading text-primary mb-3">Nombre Principales de Servicio</h4>
 
           <div class="row">
               <div class="col-md-8">
-                <p>The DNA domain scan results contains information about Domain Service Accounts. These service accounts have a specific property in Active Directory called Service Principal Name (SPN), which is a unique identifier of a service instance. SPNs are used by Kerberos authentication to associate a service instance with a service logon account. This allows a client application to request that the service authenticate an account even if the client does not have the account name.</p>
-                <p>SPNs allow service accounts to authenticate Windows users to backend systems, usually in situations where 'two hop' authentication is required. A common example is a web site that includes a connection to a SQL database – in order to authenticate a user to the database, the application service account must impersonate the user which requires an SPN entry to allow it to pass the authentication requests to the database.</p>
+                <p>Los resultados del escaneo DNA contienen información sobre las cuentas de servicio de dominio. Estas cuentas de servicio tienen una propiedad específica en Active Directory llamada Nombre principal del servicio (SPN), que es un identificador único de una instancia de servicio. Los SPN son utilizados por la autenticación Kerberos para asociar una instancia de servicio con una cuenta de inicio de sesión de servicio. Esto permite que una aplicación cliente solicite que el servicio autentique una cuenta, incluso si el cliente no tiene el nombre de la cuenta.</p>
+                <p>Los SPN permiten que las cuentas de servicio autentiquen a los usuarios de Windows con los sistemas backend, generalmente en situaciones donde se requiere la autenticación de "dos saltos". Un ejemplo común es un sitio web que incluye una conexión a una base de datos SQL: para autenticar a un usuario en la base de datos, la cuenta del servicio de la aplicación debe suplantar al usuario, lo que requiere una entrada de SPN para permitirle pasar las solicitudes de autenticación a la base de datos.</p>
               </div>
               <div class="col-md-4">
                     <div class="card bg-primary ml-3" style="width: 18rem;">
 						<div class="card-header text-white card-title">
-							<b><insert>Number SPN Accounts</insert> Accounts with SPNs Found</b>
+							<b><insert>Number SPN Accounts</insert> Cuentas con SPNs encontradas</b>
 						</div>
                         <div class="card-body">
-                            <p class="card-text text-white">These accounts may be targeted in order to gain access to the underlying services that they protect</p>
+                            <p class="card-text text-white">Estas cuentas son objetivo de cualquier ataque para obtener acceso a los servicios que protegen</p>
                         </div>
                     </div>
               </div>
           </div>
-          <p>Domain Service Accounts have privileged permissions on the domain and on specific machines. Discovering these accounts from the domain directly shows the extent of service accounts not only on target machines but also in the domain itself. This can help identify potential dormant service accounts that still have privileges but are not used.</p>
-          <p>Domain Service Accounts, if compromised, can also be used to execute a 'Silver Ticket' attack, whereby an attacker can forge an arbitrary ticket for vulnerable service instances (SPN) and deceive the services into believing that the authenticating account is another user or has different group memberships. A hijacked domain service account therefore represents a risk in that it could be used to pass malicious authentication requests to a service, potentially leading to unauthorized access.</p>
+          <p>Las cuentas de servicio de dominio tienen permisos elevados en el dominio y en máquinas específicas. El descubrimiento de estas cuentas desde el dominio muestra directamente el alcance de las cuentas de servicio no solo en las máquinas de destino, sino también en el propio dominio. Esto puede ayudar a identificar posibles cuentas de servicio inactivas que aún tienen privilegios pero que no se usan. </p>
+          <p> Las cuentas de servicio de dominio, si están comprometidas, también se pueden usar para ejecutar un ataque 'Silver Ticket', mediante el cual un atacante puede falsificar un ticket arbitrario para instancias de servicio vulnerables (SPN) y engañar a los servicios para que crean que la cuenta de autenticación es de otro usuario o pertenece a un grupo distinto. Por lo tanto, una cuenta de servicio de dominio comprometida representa un riesgo en el sentido de que podría usarse para pasar solicitudes de autenticación maliciosas a un servicio, lo que podría conducir a un acceso no autorizado.</p>
           <div class="row mr-5 ml-5 mt-3">
-            <h4 class="mb-0 mt-3">Domain Accounts with SPN (Top 10 by Password Age)</h4>
+            <h4 class="mb-0 mt-3">Cuentas de domionio con SPNs asociados (Top 10 por antiguedad de contraseña)</h4>
             <insert>SPN Accounts</insert>
           </div>
 
@@ -35,18 +35,18 @@
           <h4 class="subheading text-primary mb-3">"Kerberoasting"</h4>
           <div class="row">
             <div class="col-md-8">
-              <p>'Kerberoasting' is a technique whereby the NTLM password hash of an account used to run a service is stolen by an attacker. NTLM hashes can be obtained either from the memory of the host server using a tool such as Mimikatz, or from PCAP network traffic through a network monitoring tool.</p>
-              <p>Having obtained this hash, an attacker can attempt to crack it using various techniques including brute-forcing. Crucially this can be done offline, so the attacker does not risk detection by making many authentication attempts against the domain which hosts the account.</p>
-              <p>Having cracked this hash, the attacker can then use these newly obtained credentials to execute a 'silver ticket' attack on the domain by forging a Ticket Granting Service (TGS) Kerberos ticket. This ticket allows the attacker to authenticate to a service with bogus credentials – falsely claiming Domain Admin group membership, for example.</p>
-              <p>Mitigation of this threat is relatively straightforward. Requiring service accounts to have very long, complex passwords greatly increases the amount of time it takes for a brute-force attack to successfully derive the plain-text password from the stolen NTLM hash. Complex passwords in combination with regular password rotation of these accounts, using either a manual or an automated process, ensures that even if a hash is stolen the password is likely to be rotated long before brute forcing reveals the plain-text password.</p>
+              <p>'Kerberoasting' es una técnica mediante la cual un atacante roba el hash de NTLM de una cuenta utilizada para ejecutar un servicio. Los hashes NTLM se pueden obtener de la memoria del servidor host mediante una herramienta como Mimikatz o del tráfico de red PCAP a través de una herramienta de monitoreo de red.</p>
+              <p> Una vez obtenido este hash, un atacante puede intentar descifrarlo utilizando varias técnicas, incluida fuerza bruta. Esto se puede hacer sin conexión, por lo que el atacante no corre el riesgo de ser detectado al realizar excesivos intentos de autenticación en el dominio que alberga la cuenta. </p>
+              <p> Después de haber descibrado este hash, el atacante puede usar estas credenciales recién obtenidas para ejecutar un ataque de 'Silver Ticket' en el dominio al falsificar un ticket Kerberos del Servicio de Entrega de Tickets (TGS). Este ticket permite al atacante autenticarse en un servicio con credenciales falsas, por ejemplo, reclamar la pertenencia a un grupo de administración de dominio.</p>
+              <p> La mitigación de esta amenaza es relativamente sencilla. Exigir que las cuentas de servicio tengan contraseñas largas y complejas aumenta en gran medida la cantidad de tiempo que lleva un ataque de fuerza bruta para descifrar el hash NTLM comprometido. Las contraseñas complejas en combinación con la rotación de contraseñas de estas cuentas, utilizando un proceso manual o automatizado, aseguran que incluso si se roba un hash, es probable que la contraseña rote mucho antes de pueda descifrarse</p>
             </div>
             <div class="col-md-4">
                 <div class="card bg-primary ml-3" style="width: 18rem;">
 					<div class="card-header text-white card-title">
-						<b><insert>Oldest SPN Account</insert> days is the oldest password for a Domain Service account</b>
+						<b><insert>Oldest SPN Account</insert> dias es la cuenta de Servicio de domino mas antigua.</b>
 					</div>
                     <div class="card-body">
-                        <p class="card-text text-white">An old password for such an account indicates that there is no password rotation in place. This provides plenty of time for an attacker to use brute-force to map a password hash to a plain-text password value and execute a Silver Ticket attack.</p>
+                        <p class="card-text text-white">Una contraseña antigua en este tipo de cuentas indica que no se sigue una politica de rotado de contraseñas. Esto proporciona suficiente tiempo para que un atacante utilice la fuerza bruta para descifrar un hash y ejecutar un ataque de Silver Ticket.</p>
                     </div>
                 </div>
             </div>

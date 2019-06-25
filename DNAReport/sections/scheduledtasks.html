@@ -1,24 +1,24 @@
 <p style="page-break-before: always"></p>
 <p>&nbsp;</p>
 
-<h4 class="subheading text-primary mb-3">Scheduled Tasks</h4>
+<h4 class="subheading text-primary mb-3">Tareas programadas</h4>
 <div class="row">
       <div class="col-md-8">
-            <p>As with Windows Services, credentials used by Windows Scheduled Tasks are also stored locally to enable ongoing authentication. Credentials for Scheduled Tasks are stored in the Windows Credential Manager service which, like LSA Secrets, can be accessed by anyone with administrative privileges. Many tools exist that allow for the recovery of passwords used by Scheduled Tasks, and these can readily be exploited by an attacker to discover credentials that could be leveraged as part of the attack chain.</p>
-            <p>Applying the least-privilege model to Scheduled Tasks is again important. In particular, the he 'allow server operators to schedule tasks' right should be tightly controlled to prevent unnecessary proliferation of credentials for Scheduled Tasks. Where Scheduled Tasks must be implemented, least-privilege should be applied to both the administrators of the system upon which the Task resides as well as to the account used to run the Task itself. Finally, credential rotation again has a role to play in minimizing the impact that stolen Scheduled Task credentials pose.</p>
+        <p> Al igual que con los servicios, las credenciales utilizadas por las tareas programadas en Windows también se almacenan localmente para permitir la autenticación continua. Las credenciales para las tareas programadas se almacenan en el servicio del Administrador de credenciales de Windows, al que, como LSA Secrets, puede acceder cualquier persona con privilegios administrativos. Existen muchas herramientas que permiten la recuperación de las contraseñas utilizadas por las tareas programadas, y un atacante puede aprovecharlas fácilmente para descubrir las credenciales que podrían aprovecharse como parte de la cadena de ataques. </p>
+        <p> Otra vez es importante aplicar el modelo de privilegios mínimos a las tareas programadas. En particular, el 'permiso para que los operadores de servidores programen tareas' debe controlarse estrictamente para evitar la proliferación innecesaria de credenciales. Donde se vayan a ejecutar tareas programadas, los privilegios mínimos se deben aplicar tanto a los administradores del sistema que administren la tarea como a la cuenta utilizada para ejecutar la tarea en sí. Finalmente, la rotación de credenciales nuevamente tiene un papel clave para minimizar el impacto que representa el robo de estas credenciales. </p>
       </div>
       <div class="col-md-4">
           <div class="card bg-primary ml-3" style="width: 18rem;">
 			  <div class="card-header text-white card-title">
-				<b><insert>ScheduledTasksNumber</insert> Scheduled Tasks with stored credentials found</b>
+				<b><insert>ScheduledTasksNumber</insert> Tareas programadas encontradas con credenciales almacenadas</b>
 			  </div>
               <div class="card-body">
-                  <p class="card-text text-white">If the machines hosting these tasks are compromised by someone with admin privileges, the credentials could be stolen and used to compromise further systems</p>
+                  <p class="card-text text-white">Si las máquinas que ejecutan estas tareas están comprometidas por alguien con privilegios de administrador, las credenciales podrían ser robadas y utilizadas para comprometer otros sistemas.</p>
               </div>
           </div>
       </div>
   </div>
   <div class="row mr-5 ml-5 mt-3">
-          <h4 class="mb-0 mt-3">Accounts running Scheduled Tasks on servers (Top 10 by Password Age)</h4>
+          <h4 class="mb-0 mt-3">Cuentas ejecutando tareas programadas (Top 10 por antiguedad de contraseña)</h4>
           <insert>Scheduled Tasks</insert>
     </div>

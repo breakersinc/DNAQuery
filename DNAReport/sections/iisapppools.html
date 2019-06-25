@@ -1,23 +1,23 @@
 <p style="page-break-before: always"></p>
 <p>&nbsp;</p>
 
-<h4 class="subheading text-primary mb-3">IIS Application Pool Accounts</h4>
+<h4 class="subheading text-primary mb-3">Cuentas IIS Application Pool</h4>
 <div class="row">
       <div class="col-md-8">
-            <p>Application Pool accounts are worker service accounts that carry out functions on behalf of an IIS web application. As with other service accounts these should be managed carefully, as they typically have access permissions for application files and local data sources which might be targets for attackers. For some applications, these accounts are also required to have access to more sensitive stores of data, such as database instances or even other applications. Often these are domain accounts rather than local accounts for ease of management purposes, but regardless of the account type these identifies must be managed effectively in order to properly secure the environment. These means that access to these credentials should be limited, and where possible the passwords of these accounts should abide by organization policies governing age and rotation frequency.</p>
+            <p>Las cuentas de IIS Application Pool son cuentas de servicio que realizan funciones en nombre de una aplicación web IIS. Al igual que con otras cuentas de servicio, estas deben administrarse con cuidado, ya que generalmente tienen permisos de acceso para archivos de aplicaciones y fuentes de datos locales que pueden ser objetivos para los atacantes. Para algunas aplicaciones, estas cuentas también deben tener acceso a almacenes de datos más confidenciales, como instancias de bases de datos o incluso otras aplicaciones. A menudo, estas son cuentas de dominio en lugar de cuentas locales para facilitar la administración, pero independientemente del tipo de cuenta, deben administrarse de manera efectiva para asegurar el entorno de manera adecuada. Esto significa que el acceso a estas credenciales debe ser limitado y, cuando sea posible, las contraseñas de estas cuentas deben cumplir con las políticas de la organización que rigen la edad y la frecuencia de rotación. </p>
       </div>
       <div class="col-md-4">
           <div class="card bg-primary ml-3" style="width: 18rem;">
 			  <div class="card-header text-white card-title">
-				<b><insert>AppPoolNumber</insert> Application Pool accounts for IIS web applications found</b>
+				<b><insert>AppPoolNumber</insert> Application Pool accounts para IIS encontradas</b>
 			  </div>
               <div class="card-body">
-                  <p class="card-text text-white">If the machines hosting these tasks are compromised by someone with admin privileges, the credentials could be stolen and used to compromise further systems</p>
+                  <p class="card-text text-white">Si las máquinas que ejecutan estas tareas están comprometidas por alguien con privilegios de administrador, las credenciales podrían ser robadas y utilizadas para comprometer otros sistemas.</p>
               </div>
           </div>
       </div>
   </div>
   <div class="row mr-5 ml-5 mt-3">
-    <h4 class="mb-0 mt-3">Application Pool Accounts (Top 10 by Password Age)</h4>
+    <h4 class="mb-0 mt-3">Cuentas en Application Pools (Top 10 por antiguedad de contraseña)</h4>
     <insert>App Pool Accounts</insert>
   </div>
